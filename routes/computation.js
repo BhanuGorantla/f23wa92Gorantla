@@ -14,7 +14,7 @@ router.get('/', function(req, res, next) {
   pow = Math.pow(x);
 
    
-  res.send("pow applied to " + x + " is " + pow+ );
+  res.send("pow applied to " + x + " is " + pow);
 });
 
 module.exports = router;
