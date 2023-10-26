@@ -1,20 +1,11 @@
 var express = require('express');
 var router = express.Router();
 
+router.get('/', function (req, res) {
+  const x = parseFloat(req.query.x) || Math.round(Math.random()*10); 
+  const y = Math.pow(x,x);
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-    x=0
-  if(req.query.x === undefined){
-    x = Math.random(7);
-  }else{
-    x = req.query.x;
-  }
-
-  pow = Math.pow(x);
-
-   
-  res.send("pow applied to " + x + " is " + pow);
+  res.send(`Math.pow() applied to ${x} is ${y}`);
 });
 
 module.exports = router;
